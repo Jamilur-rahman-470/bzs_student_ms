@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+
+
+{% block head %}
+    <title>STUDENT</title>
+{% endblock head %}
+
+
+
+{% block content %}
+<div class="container my-5">
+    <div class="row align-items-center justify-content-center">
+        <h3>Student Management</h3>
+    </div>
+    <div class="row align-items-center justify-content-center my-3">
+        <a href="" class="btn btn-primary mx-2"><i data-feather="plus"></i> NEW STUDENT</a>
+        <a href="{% url 's.d.all' %}" class="btn btn-danger mx-2"><i data-feather="x"></i> DELETE ALL</a>
+    </div>
+    </div>
+
+    <!-- IMPORT DATA -->
+    <!-- <div class="container my-5">
+    <div class="row align-items-center justify-content-center my-3">
+        <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        >
+        <i data-feather="upload"></i> Import Student data
+        </button>
+    </div>
+    <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+                Upload CSV File To Import
+            </h5>
+            <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+            >
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form action="{% url 'c.i' %}" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">CSV FILE</label>
+                    <br>
+                    <input type="file" name="file" id="" class="form-control" />
+                </div>
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                Close
+                </button>
+                <input type="submit" class="btn btn-primary" value="UPLOAD">
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div> -->
+
+    <!-- SEARCH FILTER -->
+    <!-- <div class="container my-5">
+    <div class="card p-3">
+        <div class="row align-items-center justify-content-between w-100">
+        <div class="col-md-4 h4">Classes</div>
+        <div class="col-md-4">
+            <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'c.s'%}">
+                {% csrf_token %}
+                <input
+                class="form-control w-75"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                name='search'
+            />
+            <button class="btn btn-success w-25" type="submit">Search</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div> -->
+
+    <!-- DATAS -->
+    <!-- <div class="container my-5">
+    <div class="row">
+        {% for class in classes %}
+        <div class="col-lg-4 my-2">
+        <div class="card p-3">
+            <div class="card-body">
+            <h3 class="text-center">{{class.standard}} {{class.section}}</h3>
+            <h4 class="text-center">{{class.shift}}</h4>
+            <div class="row align-items-center justify-content-center">
+                <a href="{% url 'c.d' id=class.id %}" class="btn btn-danger mr-1"
+                ><i data-feather="x-circle" class="mx-1"></i> Delete</a
+                >
+                <a href="#" class="btn btn-primary ml-1"
+                >Get Details<i data-feather="arrow-right" class="mx-1"></i
+                ></a>
+            </div>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div> -->
+{% endblock content %}
+    
+    

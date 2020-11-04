@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+
+
+{% block head %}
+    <title>LOGIN</title>
+{% endblock head %}
+    
+
+
+{% block content %}
+    <div class="login">
+        <div class="row w-100 h-100 align-items-center justify-content-center">
+            <form action="{% url 'login' %}" method="POST" style="width: 320px">
+                {% csrf_token %}
+                <div class="form-group my-2">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name='username' required>
+                </div>
+                <div class="form-group my-2">
+                    <label for="username">Password</label>
+                    <input type="password" class="form-control" name='password' required>
+                </div>
+                <input type="submit" value="LOGIN" class="btn btn-primary w-100 my-2">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+    
