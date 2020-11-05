@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class StudentClass(models.Model):
     
@@ -21,8 +21,9 @@ class Student(models.Model):
     
     father_name = models.CharField(max_length=70)
     mother_name = models.CharField(max_length=70)
-    father_phone = models.IntegerField()
+    father_phone = models.IntegerField(default=0)
     address = models.TextField()
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, default=None)
 
     def __str__(Self):
         return Self.first_name + '  ' + Self.last_name

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+    <title>CLASS DETAILS</title>
+{% endblock head %}
+
+
+
+{% block content %}
+    <div class="conatiner my-5">
+        <h2 class="text-center">Class - {{class.standard}}</h2>
+        <h4 class="text-center">Section - {{class.section}}</h4>
+        <h4 class="text-center">Shift - {{class.shift}}</h4>
+        
+        {% for i in class.students.all %}
+            <p>{{i.first_name}}</p>
+        {% endfor %}
+            
+    </div>
+{% endblock content %}
+    
+    
